@@ -6,8 +6,9 @@ import './App.css'
 function TheHeader() {
   return (
     <nav>
-      <ul>
+      <ul className="flex gap-4 justify-center">
         <li>Home</li>
+        <li>Blog</li>
       </ul>
     </nav>
   )
