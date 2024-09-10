@@ -72,7 +72,8 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p className="mt-4">{quote}</p>
+        {/* random quote */}
+        <q className="mt-4">{quote}</q>
 
         <ul className="mt-6 grid grid-cols-2 gap-4">
           <CoreConcept
