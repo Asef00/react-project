@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import gearIcon from './assets/icons8-gears-50.png'
 
 const inspiringQuotes = [
   'The only way to do great work is to love what you do.', // Steve Jobs
@@ -34,6 +35,22 @@ function Header() {
   )
 }
 
+type CoreConceptProps = {
+  title: string
+  desc: string
+  img: string
+}
+
+function CoreConcept(props: CoreConceptProps) {
+  return (
+    <li className="flex flex-col items-center gap-2 text-black bg-white rounded-md p-4">
+      <img width={50} height={50} src={props.img} alt={props.title} />
+      <h3>{props.title}</h3>
+      <p>{props.desc}</p>
+    </li>
+  )
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -56,6 +73,19 @@ function App() {
           count is {count}
         </button>
         <p className="mt-4">{quote}</p>
+
+        <ul className="mt-6 grid grid-cols-2 gap-4">
+          <CoreConcept
+            title="Components"
+            desc="The core UI building block."
+            img={gearIcon}
+          />
+          <CoreConcept
+            title="Props"
+            desc="To have dynamic content per each component instance."
+            img={gearIcon}
+          />
+        </ul>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
