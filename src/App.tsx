@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import gearIcon from './assets/icons8-gears-50.png'
+import { CoreConceptProps } from './types/props'
+import { CORE_CONCEPTS } from './data'
 
 const inspiringQuotes = [
   'The only way to do great work is to love what you do.', // Steve Jobs
@@ -33,12 +34,6 @@ function Header() {
       </ul>
     </nav>
   )
-}
-
-type CoreConceptProps = {
-  title: string
-  desc: string
-  img: string
 }
 
 function CoreConcept(props: CoreConceptProps) {
@@ -76,16 +71,8 @@ function App() {
         <q className="mt-4">{quote}</q>
 
         <ul className="mt-6 grid grid-cols-2 gap-4">
-          <CoreConcept
-            title="Components"
-            desc="The core UI building block."
-            img={gearIcon}
-          />
-          <CoreConcept
-            title="Props"
-            desc="To have dynamic content per each component instance."
-            img={gearIcon}
-          />
+          <CoreConcept {...CORE_CONCEPTS[0]} />
+          <CoreConcept {...CORE_CONCEPTS[1]} />
         </ul>
       </div>
       <p className="read-the-docs">
