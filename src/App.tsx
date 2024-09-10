@@ -16,8 +16,8 @@ function App() {
 
   const quote = inspiringQuotes[genRandomInt(10)]
 
-  const handleSelect = () => {
-    console.log('Select happened!')
+  const handleSelect = (key: string) => {
+    console.log(key)
   }
 
   return (
@@ -50,12 +50,17 @@ function App() {
 
         <section className="mt-6">
           <h2>Examples</h2>
+          {/* tab buttons */}
           <menu className="mt-4 flex gap-2 justify-center">
-            <TabButton onSelect={handleSelect}>Components</TabButton>
-            <TabButton onSelect={handleSelect}>JSX</TabButton>
-            <TabButton onSelect={handleSelect}>Props</TabButton>
-            <TabButton onSelect={handleSelect}>State</TabButton>
+            <TabButton onSelect={() => handleSelect('components')}>
+              Components
+            </TabButton>
+            <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
+          {/* tab content */}
+          <div></div>
         </section>
       </main>
     </>
