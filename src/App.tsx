@@ -2,22 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { CORE_CONCEPTS } from './data'
+import { CORE_CONCEPTS, inspiringQuotes } from './data'
 import Header from './components/Header'
 import CoreConcept from './components/CoreConcept'
-
-const inspiringQuotes = [
-  'The only way to do great work is to love what you do.', // Steve Jobs
-  'Live as if you were to die tomorrow. Learn as if you were to live forever.', // Mahatma Gandhi
-  'The greatest glory in living lies not in never falling, but in rising every time we fall.', // Nelson Mandela
-  "Believe you can and you're halfway there.", // Theodore Roosevelt
-  'The future belongs to those who believe in the beauty of their dreams.', // Eleanor Roosevelt
-  "Success is not the key to happiness. Happiness is the key to success. And if you love what you're doing, you'll be successful.", // Albert Schweitzer
-  'The only limit to our realization of tomorrow will be our doubts of today.', // Franklin D. Roosevelt
-  'You must be the change you wish to see in the world.', // Mahatma Gandhi
-  "Don't watch the clock; be the clock.", // Unknown
-  'The greatest glory in living lies not in never falling, but in rising every time we fall.', // Nelson Mandela
-]
 
 function genRandomInt(max: number) {
   return Math.floor(Math.random() * (max + 1))
