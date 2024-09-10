@@ -37,6 +37,8 @@ function Header() {
 function App() {
   const [count, setCount] = useState(0)
 
+  const quote = inspiringQuotes[genRandomInt(10)]
+
   return (
     <>
       <Header />
@@ -53,7 +55,7 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p className="mt-4">{inspiringQuotes[genRandomInt(10)]}</p>
+        <p className="mt-4">{quote}</p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
