@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function TheHeader() {
+function Header() {
   return (
     <nav>
       <ul className="flex gap-4 justify-center">
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <TheHeader />
+      <Header />
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
