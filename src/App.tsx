@@ -50,13 +50,11 @@ function App() {
 
         <section className="mt-6">
           <h2>Examples</h2>
-          <menu className="mt-4">
-            <ul className="flex gap-2 justify-center">
-              <TabButton onSelect={handleSelect}>Components</TabButton>
-              <TabButton onSelect={handleSelect}>JSX</TabButton>
-              <TabButton onSelect={handleSelect}>Props</TabButton>
-              <TabButton onSelect={handleSelect}>State</TabButton>
-            </ul>
+          <menu className="mt-4 flex gap-2 justify-center">
+            <TabButton onSelect={handleSelect}>Components</TabButton>
+            <TabButton onSelect={handleSelect}>JSX</TabButton>
+            <TabButton onSelect={handleSelect}>Props</TabButton>
+            <TabButton onSelect={handleSelect}>State</TabButton>
           </menu>
         </section>
       </main>
