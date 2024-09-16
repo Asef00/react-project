@@ -60,8 +60,9 @@ function App() {
           <q className="mt-4 block">{quote}</q>
 
           <ul className="mt-6 grid grid-cols-2 gap-4">
-            <CoreConcept {...CORE_CONCEPTS[0]} />
-            <CoreConcept {...CORE_CONCEPTS[1]} />
+            {CORE_CONCEPTS.map((item) => (
+              <CoreConcept key={item.title} {...item} />
+            ))}
           </ul>
         </div>
 
