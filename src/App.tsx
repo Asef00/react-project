@@ -13,12 +13,28 @@ function genRandomInt(max: number) {
 
 function App() {
   const [count, setCount] = useState(0)
-  const [selectedTab, setSelectedTab] = useState('components')
+  const [selectedTab, setSelectedTab] = useState<string>()
 
   const quote = inspiringQuotes[genRandomInt(10)]
 
   const handleSelect = (key: string) => {
     setSelectedTab(key)
+  }
+
+  let tabContent = <p className="mt-4">Please select a topic.</p>
+
+  if (selectedTab) {
+    tabContent = (
+      <div className="p-10 mt-4 text-start rounded-md bg-gray-800">
+        <h3 className="font-semibold text-white text-xl mb-4">
+          {TAB_CONTENT[selectedTab].title}
+        </h3>
+        <p>{TAB_CONTENT[selectedTab].desc}</p>
+        <pre>
+          <code>{TAB_CONTENT[selectedTab].code}</code>
+        </pre>
+      </div>
+    )
   }
 
   return (
@@ -60,16 +76,7 @@ function App() {
             <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
             <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
-          {/* tab content */}
-          <div className="p-10 mt-4 text-start rounded-md bg-gray-800">
-            <h3 className="font-semibold text-white text-xl mb-4">
-              {TAB_CONTENT[selectedTab].title}
-            </h3>
-            <p>{TAB_CONTENT[selectedTab].desc}</p>
-            <pre>
-              <code>{TAB_CONTENT[selectedTab].code}</code>
-            </pre>
-          </div>
+          {tabContent}
         </section>
       </main>
     </>
