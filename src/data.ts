@@ -26,3 +26,44 @@ export const inspiringQuotes = [
   "Don't watch the clock; be the clock.", // Unknown
   'The greatest glory in living lies not in never falling, but in rising every time we fall.', // Nelson Mandela
 ]
+
+export const TAB_CONTENT = {
+  components: {
+    title: 'Components',
+    desc: 'Components are building blocks of React applications',
+    code: `
+function Welcome() {
+  return <h1>Hello, World!</h1>
+}
+    `,
+  },
+  jsx: {
+    title: 'JSX',
+    desc: 'JSX is a syntax extension to JavaScript.',
+    code: `
+function Welcome() {
+  return <h1>Hello, World!</h1>
+}
+    `,
+  },
+  props: {
+    title: 'Props',
+    desc: 'Components are building blocks of React Project',
+    code: `
+<div>
+  <h1>Welcome {userName}</h1>
+</div>
+    `,
+  },
+  state: {
+    title: 'State',
+    desc: 'State allows React component to change their output over time in response to user actions.',
+    code: `
+function Counter() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  return <h1>Hello, World!</h1>
+}
+    `,
+  },
+}

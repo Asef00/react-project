@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { CORE_CONCEPTS, inspiringQuotes } from './data'
+import { CORE_CONCEPTS, inspiringQuotes, TAB_CONTENT } from './data'
 import Header from './components/Header'
 import CoreConcept from './components/CoreConcept'
 import TabButton from './components/TabButton'
@@ -13,7 +13,7 @@ function genRandomInt(max: number) {
 
 function App() {
   const [count, setCount] = useState(0)
-  const [selectedTab, setSelectedTab] = useState('Please select a tab')
+  const [selectedTab, setSelectedTab] = useState('components')
 
   const quote = inspiringQuotes[genRandomInt(10)]
 
@@ -61,7 +61,15 @@ function App() {
             <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
           {/* tab content */}
-          <div className="p-10">{selectedTab}</div>
+          <div className="p-10 mt-4 text-start rounded-md bg-gray-800">
+            <h3 className="font-semibold text-white text-xl mb-4">
+              {TAB_CONTENT[selectedTab].title}
+            </h3>
+            <p>{TAB_CONTENT[selectedTab].desc}</p>
+            <pre>
+              <code>{TAB_CONTENT[selectedTab].code}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </>
