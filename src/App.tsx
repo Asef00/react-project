@@ -13,11 +13,12 @@ function genRandomInt(max: number) {
 
 function App() {
   const [count, setCount] = useState(0)
+  const [selectedTab, setSelectedTab] = useState('Please select a tab')
 
   const quote = inspiringQuotes[genRandomInt(10)]
 
   const handleSelect = (key: string) => {
-    console.log(key)
+    setSelectedTab(key)
   }
 
   return (
@@ -60,7 +61,7 @@ function App() {
             <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
           {/* tab content */}
-          <div></div>
+          <div className="p-10">{selectedTab}</div>
         </section>
       </main>
     </>
