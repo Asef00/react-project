@@ -1,12 +1,19 @@
 type TabButtonProps = {
   children: string
   onSelect: () => void
+  isActive: boolean
 }
 
-export default function TabButton({ children, onSelect }: TabButtonProps) {
+export default function TabButton({
+  children,
+  onSelect,
+  isActive,
+}: TabButtonProps) {
   return (
     <li>
-      <button onClick={onSelect}>{children}</button>
+      <button className={isActive ? 'bg-slate-800' : ''} onClick={onSelect}>
+        {children}
+      </button>
     </li>
   )
 }

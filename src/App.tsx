@@ -69,12 +69,30 @@ function App() {
           <h2>Examples</h2>
           {/* tab buttons */}
           <menu className="mt-4 flex gap-2 justify-center">
-            <TabButton onSelect={() => handleSelect('components')}>
+            <TabButton
+              isActive={selectedTab === 'components'}
+              onSelect={() => handleSelect('components')}
+            >
               Components
             </TabButton>
-            <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
+            <TabButton
+              isActive={selectedTab === 'jsx'}
+              onSelect={() => handleSelect('jsx')}
+            >
+              JSX
+            </TabButton>
+            <TabButton
+              isActive={selectedTab === 'props'}
+              onSelect={() => handleSelect('props')}
+            >
+              Props
+            </TabButton>
+            <TabButton
+              isActive={selectedTab === 'state'}
+              onSelect={() => handleSelect('state')}
+            >
+              State
+            </TabButton>
           </menu>
           {tabContent}
         </section>
