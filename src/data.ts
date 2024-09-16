@@ -27,7 +27,13 @@ export const inspiringQuotes = [
   'The greatest glory in living lies not in never falling, but in rising every time we fall.', // Nelson Mandela
 ]
 
-export const TAB_CONTENT = {
+export const TAB_CONTENT: {
+  [key: string]: {
+    title: string
+    desc: string
+    code: string
+  }
+} = {
   components: {
     title: 'Components',
     desc: 'Components are building blocks of React applications',
