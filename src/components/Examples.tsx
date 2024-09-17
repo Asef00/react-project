@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import TabButton from './TabButton'
 import { TAB_CONTENT } from '../data'
+import Section from './Section'
 
 export default function Examples() {
   const [selectedTab, setSelectedTab] = useState<string>()
@@ -26,8 +27,7 @@ export default function Examples() {
   }
 
   return (
-    <section className="mt-6">
-      <h2>Examples</h2>
+    <Section title="Examples" {...{ className: 'mt-6' }}>
       {/* tab buttons */}
       <menu className="mt-4 flex gap-2 justify-center">
         <TabButton
@@ -56,6 +56,6 @@ export default function Examples() {
         </TabButton>
       </menu>
       {tabContent}
-    </section>
+    </Section>
   )
 }
