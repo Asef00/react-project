@@ -2,6 +2,7 @@ import { useState } from 'react'
 import TabButton from './TabButton'
 import { TAB_CONTENT } from '../data'
 import Section from './Section'
+import Tabs from './Tabs'
 
 export default function Examples() {
   const [selectedTab, setSelectedTab] = useState<string>()
@@ -10,26 +11,9 @@ export default function Examples() {
     setSelectedTab(key)
   }
 
-  let tabContent = <p className="mt-4">Please select a topic.</p>
-
-  if (selectedTab) {
-    tabContent = (
-      <div className="p-10 mt-4 text-start rounded-md bg-gray-800">
-        <h3 className="font-semibold text-white text-xl mb-4">
-          {TAB_CONTENT[selectedTab].title}
-        </h3>
-        <p>{TAB_CONTENT[selectedTab].desc}</p>
-        <pre>
-          <code>{TAB_CONTENT[selectedTab].code}</code>
-        </pre>
-      </div>
-    )
-  }
-
-  return (
-    <Section title="Examples" {...{ className: 'mt-6' }}>
-      {/* tab buttons */}
-      <menu className="mt-4 flex gap-2 justify-center">
+  function TabButtons() {
+    return (
+      <>
         <TabButton
           isActive={selectedTab === 'components'}
           onSelect={() => handleSelect('components')}
@@ -54,8 +38,34 @@ export default function Examples() {
         >
           State
         </TabButton>
-      </menu>
-      {tabContent}
+      </>
+    )
+  }
+
+  let tabContent = <p className="mt-4">Please select a topic.</p>
+
+  if (selectedTab) {
+    tabContent = (
+      <div className="p-10 mt-4 text-start rounded-md bg-gray-800">
+        <h3 className="font-semibold text-white text-xl mb-4">
+          {TAB_CONTENT[selectedTab].title}
+        </h3>
+        <p>{TAB_CONTENT[selectedTab].desc}</p>
+        <pre>
+          <code>{TAB_CONTENT[selectedTab].code}</code>
+        </pre>
+      </div>
+    )
+  }
+
+  return (
+    <Section title="Examples" {...{ className: 'mt-6' }}>
+      {/* tab buttons */}
+      <Tabs
+        className="mt-4 flex gap-2 justify-center"
+        buttons={<TabButtons />}
+        tabContent={tabContent}
+      ></Tabs>
     </Section>
   )
 }
